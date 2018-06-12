@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ocamar.DataEngine.DAL", "Com.Ocamar.DataEngine.DAL\Com.Ocamar.DataEngine.DAL.csproj", "{B6108654-5D10-4B40-83A8-4AE89D2A4268}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ocamar.DataEngine.BAL", "Com.Ocamar.DataEngine.BAL\Com.Ocamar.DataEngine.BAL.csproj", "{7A844C11-5ECE-43AD-85C7-645328B848EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ocamar.DataEngine.Cache", "Com.Ocamar.DataEngine.Cache\Com.Ocamar.DataEngine.Cache.csproj", "{CEEC5738-8AB3-41AA-882A-A76F77B003DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ocamar.DataEngine.Service", "Com.Ocamar.DataEngine.Service\Com.Ocamar.DataEngine.Service.csproj", "{5C95CEAD-DB63-4414-86F5-F4DE1F773660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ocamar.DataEngine.Web", "Com.Ocamar.DataEngine.Web\Com.Ocamar.DataEngine.Web.csproj", "{81CC703B-BD47-4402-82CA-4FDCF1E948C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{B6108654-5D10-4B40-83A8-4AE89D2A4268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6108654-5D10-4B40-83A8-4AE89D2A4268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6108654-5D10-4B40-83A8-4AE89D2A4268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A844C11-5ECE-43AD-85C7-645328B848EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A844C11-5ECE-43AD-85C7-645328B848EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A844C11-5ECE-43AD-85C7-645328B848EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A844C11-5ECE-43AD-85C7-645328B848EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEEC5738-8AB3-41AA-882A-A76F77B003DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEC5738-8AB3-41AA-882A-A76F77B003DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEC5738-8AB3-41AA-882A-A76F77B003DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEC5738-8AB3-41AA-882A-A76F77B003DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C95CEAD-DB63-4414-86F5-F4DE1F773660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C95CEAD-DB63-4414-86F5-F4DE1F773660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C95CEAD-DB63-4414-86F5-F4DE1F773660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C95CEAD-DB63-4414-86F5-F4DE1F773660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CC703B-BD47-4402-82CA-4FDCF1E948C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CC703B-BD47-4402-82CA-4FDCF1E948C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CC703B-BD47-4402-82CA-4FDCF1E948C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CC703B-BD47-4402-82CA-4FDCF1E948C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
