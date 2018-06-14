@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ocamar.DataEngine.Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Ocamar.DataEngine.Web", "Com.Ocamar.DataEngine.Web\Com.Ocamar.DataEngine.Web.csproj", "{81CC703B-BD47-4402-82CA-4FDCF1E948C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7091C92F-2B8C-4F8B-99C8-E35C99360A14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{88371918-D139-4B43-96F9-58A0779D502A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{81CC703B-BD47-4402-82CA-4FDCF1E948C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81CC703B-BD47-4402-82CA-4FDCF1E948C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81CC703B-BD47-4402-82CA-4FDCF1E948C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88371918-D139-4B43-96F9-58A0779D502A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88371918-D139-4B43-96F9-58A0779D502A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88371918-D139-4B43-96F9-58A0779D502A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88371918-D139-4B43-96F9-58A0779D502A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88371918-D139-4B43-96F9-58A0779D502A} = {7091C92F-2B8C-4F8B-99C8-E35C99360A14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65C1F186-197B-4119-9C18-C9B8AC64C98A}
