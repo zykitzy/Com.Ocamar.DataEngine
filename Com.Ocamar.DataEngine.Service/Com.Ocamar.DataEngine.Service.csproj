@@ -74,6 +74,10 @@
       <Project>{7a844c11-5ece-43ad-85c7-645328b848eb}</Project>
       <Name>Com.Ocamar.DataEngine.BAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Com.Ocamar.DataEngine.Cache\Com.Ocamar.DataEngine.Cache.csproj">
+      <Project>{CEEC5738-8AB3-41AA-882A-A76F77B003DC}</Project>
+      <Name>Com.Ocamar.DataEngine.Cache</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

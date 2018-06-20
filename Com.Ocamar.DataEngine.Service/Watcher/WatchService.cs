@@ -24,8 +24,7 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
     {
         private readonly string _port
             = ConfigurationManager.AppSettings["ListenPort"]; // 监听端口
-        private readonly string _mqhost
-            = ConfigurationManager.AppSettings["MQHost"]; // MQ 服务器
+
 
         private TcpListener _watcher; // 监听者，需要单独线程开启监听所有访问本机IP的
         private IConnectionFactory _factory; // 消息队列
@@ -35,8 +34,7 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
         /// </summary>
         public WatchService()
         {
-            // 初始化工厂，这里默认的URL是不需要修改的
-            _factory = new ConnectionFactory($"tcp://{_mqhost}");
+
             IPAddress local = IPAddress.Any;
             _watcher = new TcpListener(local, Convert.ToInt32(_port));
         }
@@ -48,7 +46,6 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
             Thread _listen = new Thread(Listen);
             _listen.Start();
             LogWriter.Info($"开始监听: {_port} 端口");
-            LogWriter.Info($"MQ 服务器: {_mqhost}");
         }
 
         /// <summary>
@@ -61,7 +58,7 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
             {
                 //开始监听
                 _watcher.Start();
-                var receive = new ReceiveHelper(_factory);
+                var receive = new ReceiveHelper();
 
                 while (true)
                 {

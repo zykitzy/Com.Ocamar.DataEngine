@@ -1,5 +1,6 @@
 ﻿using Apache.NMS;
 using Com.Ocamar.DataEngine.BAL.Helper;
+using Com.Ocamar.DataEngine.Cache.ActiveMQ;
 using Com.OCAMAR.Common.Library;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,6 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
 {
     public class ReceiveHelper
     {
-        private IConnectionFactory _factory;
-        public ReceiveHelper(IConnectionFactory factory)
-        {
-            _factory = factory;
-        }
 
         public void ReceiveData(object newclient)
         {
@@ -49,7 +45,7 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
                     var read = new BinaryReader(client.GetStream());
                     buffer = read.ReadBytes(buffer.Length);
 
-                    InsertMQ(buffer); //插入MQ
+                    ActiveMQHelper.InsertMQ(buffer); //插入MQ
                 }
                 catch (SocketException ex)
                 {
@@ -70,28 +66,6 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
             }
         }
 
-        /// <summary>
-        /// 插入MQ
-        /// </summary>
-        /// <param name="buffer">字节流</param>
-        private void InsertMQ(byte[] buffer)
-        {
-            using (IConnection connection = _factory.CreateConnection())
-            {
-                //Create the Session  
-                using (ISession session = connection.CreateSession())
-                {
-                    //Create the Producer for the topic/queue  
-                    IMessageProducer prod = session.CreateProducer(
-                        new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic(StatusBug.MQTipic));
-
-                    var msg = prod.CreateBytesMessage();
-                    msg.Content = buffer;
-                    LogWriter.Info("SendingMQ: " + BitConverter.ToString(buffer));
-                    prod.Send(msg, Apache.NMS.MsgDeliveryMode.NonPersistent,
-                        Apache.NMS.MsgPriority.Normal, TimeSpan.MinValue);
-                }
-            }
-        }
+        
     }
 }
