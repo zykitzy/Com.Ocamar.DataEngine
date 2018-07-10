@@ -59,14 +59,14 @@
     <Compile Include="Redis\RedisHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Com.Ocamar.DataEngine.BAL\Com.Ocamar.DataEngine.BAL.csproj">
-      <Project>{7a844c11-5ece-43ad-85c7-645328b848eb}</Project>
-      <Name>Com.Ocamar.DataEngine.BAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Ocamar.DataEngine.Common\Com.Ocamar.DataEngine.Common.csproj">
+      <Project>{377e2ef7-f3d2-4dba-b2d3-5843daea878b}</Project>
+      <Name>Com.Ocamar.DataEngine.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

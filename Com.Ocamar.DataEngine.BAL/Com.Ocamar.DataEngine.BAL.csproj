@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Com.OCAMAR.Common.Library">
+      <HintPath>..\..\..\..\..\..\数据接口平台\Source\Branches\zhangyi\Com.OCAMAR.AKDIP\packages\Com.OCAMAR.Common\Com.OCAMAR.Common.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="EmitMapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,9 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Helper\StatusBug.cs" />
+    <Compile Include="Apis\BaseBLL.cs" />
+    <Compile Include="Apis\SysConfig\StationManagerBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Apis\Cache\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Ocamar.DataEngine.Cache\Com.Ocamar.DataEngine.Cache.csproj">
+      <Project>{CEEC5738-8AB3-41AA-882A-A76F77B003DC}</Project>
+      <Name>Com.Ocamar.DataEngine.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Ocamar.DataEngine.DAL\Com.Ocamar.DataEngine.DAL.csproj">
+      <Project>{b6108654-5d10-4b40-83a8-4ae89d2a4268}</Project>
+      <Name>Com.Ocamar.DataEngine.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

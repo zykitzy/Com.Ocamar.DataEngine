@@ -19,6 +19,8 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
     /// 1：开启线程，监听端口
     /// 2：将数据存入消息队列
     /// 3：如果是上线请求，需要立即响应
+    /// todo: 4：新来的基站请求进行校验 
+    /// todo: 5：校验新上线终端 Device ID 是否可以使用，不合法的，需要重新分配
     /// </summary>
     public class WatchService
     {
@@ -34,7 +36,6 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
         /// </summary>
         public WatchService()
         {
-
             IPAddress local = IPAddress.Any;
             _watcher = new TcpListener(local, Convert.ToInt32(_port));
         }
@@ -73,9 +74,7 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
                 LogWriter.Error("监听发生错误：");
                 LogWriter.Error(ex.ToString());
                 _watcher.Stop();// 先停止监听
-            }
-            finally
-            {
+
                 // 重新唤醒监听并且继续
                 StartListen();
             }

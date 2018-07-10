@@ -1,13 +1,9 @@
 ﻿using Apache.NMS;
 using Apache.NMS.ActiveMQ;
-using Com.Ocamar.DataEngine.BAL.Helper;
+using Com.Ocamar.DataEngine.Common.Helper.Status;
 using Com.OCAMAR.Common.Library;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Com.Ocamar.DataEngine.Cache.ActiveMQ
 {
@@ -34,7 +30,7 @@ namespace Com.Ocamar.DataEngine.Cache.ActiveMQ
                 {
                     //Create the Producer for the topic/queue  
                     IMessageProducer prod = session.CreateProducer(
-                        new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic(StatusBug.MQTipic));
+                        new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic(GlobalStatus.MQTopic));
 
                     var msg = prod.CreateBytesMessage();
                     msg.Content = buffer;

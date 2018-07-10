@@ -1,14 +1,9 @@
-﻿using Apache.NMS;
-using Com.Ocamar.DataEngine.BAL.Helper;
-using Com.Ocamar.DataEngine.Cache.ActiveMQ;
+﻿using Com.Ocamar.DataEngine.Cache.ActiveMQ;
+using Com.Ocamar.DataEngine.Service.Watcher.Response;
 using Com.OCAMAR.Common.Library;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Com.Ocamar.DataEngine.Service.Watcher
 {
@@ -25,7 +20,7 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
             }
             while (true)
             {
-                if (!client.Connected || (client.Client.Poll(20, SelectMode.SelectRead) 
+                if (!client.Connected || (client.Client.Poll(20, SelectMode.SelectRead)
                     && client.Available == 0))
                 {
                     LogWriter.Info($"来自 {client.Client.RemoteEndPoint} 的连接断开");
@@ -42,10 +37,13 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
                 byte[] buffer = new byte[client.Available];
                 try
                 {
-                    var read = new BinaryReader(client.GetStream());
+                    var stream = client.GetStream();
+                    var read = new BinaryReader(stream);
                     buffer = read.ReadBytes(buffer.Length);
-
                     ActiveMQHelper.InsertMQ(buffer); //插入MQ
+
+                    var clientsync = new ClientSync();
+                    clientsync.ClientsOnline(buffer, stream); // 响应上线
                 }
                 catch (SocketException ex)
                 {
@@ -66,6 +64,6 @@ namespace Com.Ocamar.DataEngine.Service.Watcher
             }
         }
 
-        
+
     }
 }

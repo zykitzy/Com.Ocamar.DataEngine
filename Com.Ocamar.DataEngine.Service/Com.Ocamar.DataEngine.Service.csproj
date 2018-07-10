@@ -53,14 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formatter\ActionSyncFormat.cs" />
+    <Compile Include="Formatter\DataSpliteFormat.cs" />
+    <Compile Include="Formatter\FormatBase.cs" />
+    <Compile Include="Monitor\MonitorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Watcher\ReceiveHelper.cs" />
+    <Compile Include="Watcher\Response\ClientSync.cs" />
     <Compile Include="Watcher\WatchService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Distribute\" />
-    <Folder Include="Formatter\" />
-    <Folder Include="Monitor\" />
+    <Folder Include="Exception\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,13 +74,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Com.Ocamar.DataEngine.BAL\Com.Ocamar.DataEngine.BAL.csproj">
-      <Project>{7a844c11-5ece-43ad-85c7-645328b848eb}</Project>
-      <Name>Com.Ocamar.DataEngine.BAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Com.Ocamar.DataEngine.Cache\Com.Ocamar.DataEngine.Cache.csproj">
       <Project>{CEEC5738-8AB3-41AA-882A-A76F77B003DC}</Project>
       <Name>Com.Ocamar.DataEngine.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Ocamar.DataEngine.Common\Com.Ocamar.DataEngine.Common.csproj">
+      <Project>{377e2ef7-f3d2-4dba-b2d3-5843daea878b}</Project>
+      <Name>Com.Ocamar.DataEngine.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

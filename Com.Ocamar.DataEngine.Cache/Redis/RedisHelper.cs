@@ -17,7 +17,7 @@ namespace Com.Ocamar.DataEngine.Cache.Redis
     /// </summary>
     public class RedisHelper
     {
-        private static string _redisPath = 
+        private static readonly string _redisPath = 
             ConfigurationManager.AppSettings["RedisPath"]; // Redis 服务器
         /// <summary>
         /// redis 连接对象
@@ -64,6 +64,9 @@ namespace Com.Ocamar.DataEngine.Cache.Redis
         /// 默认的key值（用来当作RedisKey的前缀）【此部分为自行修改的，无意义】
         /// </summary>
         public static string DefaultKey { get; private set; }
+
+
+
         /// <summary>
         /// 静态的构造函数,
         /// 构造函数是属于类的，而不是属于实例的
